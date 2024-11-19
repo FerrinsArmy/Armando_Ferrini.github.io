@@ -1,0 +1,21 @@
+{
+    "HTML Basic Structure": {
+        "prefix": "htmlbasic",
+        "body": [
+            "Name: [Armando], Surname: [Ferrini], Group: [Ekfu-23]",
+            "<!DOCTYPE html>",
+            "<html lang=\"en\">",
+            "<head>",
+            "    <meta charset=\"UTF-8\">",
+            "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+            "    <title>${1:Document}</title>",
+            "</head>",
+            "<body>",
+            "    <h1>${2:Welcome}</h1>",
+            "    <p>${3:Your content here}</p>",
+            "</body>",
+            "</html>"
+        ],
+        "description": "Basic HTML document structure with a comment"
+    }
+}
