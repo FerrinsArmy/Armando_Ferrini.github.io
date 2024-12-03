@@ -11,39 +11,57 @@
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
 /* Fonts */
+/* Root font and color definitions for global styles */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
-}
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Raleway", sans-serif;
+  --nav-font: "Poppins", sans-serif;
 
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
+  /* Global Colors - Default Light Theme */
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #272829; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #050d18; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #149ddd; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --accent-color: #149ddd; /* Accent color for buttons, links, etc. */
+  --surface-color: #ffffff; /* The surface color for boxed elements */
+  --contrast-color: #ffffff; /* Contrast color for text against backgrounds */
+  
+  /* Nav Menu Colors - Default Light Theme */
+  --nav-color: #a8a9b4; /* Default color of the main navmenu links */
+  --nav-hover-color: #ffffff; /* Nav links hover or active color */
+  --nav-mobile-background-color: #040b14; /* Mobile nav menu background color */
+  --nav-dropdown-background-color: #040b14; /* Dropdown menu background color */
+  --nav-dropdown-color: #a8a9b4; /* Dropdown menu link color */
+  --nav-dropdown-hover-color: #ffffff; /* Dropdown link hover color */
+
+  /* Scroll behavior */
+  scroll-behavior: smooth;
 }
 
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
-:root {
-  --nav-color: #a8a9b4;  /* The default color of the main navmenu links */
-  --nav-hover-color: #ffffff; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #040b14; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #040b14; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #a8a9b4; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #ffffff; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+/* Dark Mode overrides - Applied when the [data-theme="dark"] attribute is set */
+[data-theme="dark"] {
+  /* Global Colors - Dark Theme */
+  --background-color: #040b14; /* Dark background color */
+  --default-color: #ffffff; /* Light text color for dark mode */
+  --heading-color: #ffffff; /* White heading color in dark mode */
+  --surface-color: #151f2b; /* Dark surface color */
+  --contrast-color: #ffffff; /* Contrast text color for readability */
+
+  /* Nav Menu Colors - Dark Theme */
+  --nav-color: #a8a9b4; /* Default color of the main navmenu links */
+  --nav-hover-color: #ffffff; /* Hover color of nav links */
+  --nav-mobile-background-color: #040b14; /* Mobile nav background */
+  --nav-dropdown-background-color: #040b14; /* Dropdown menu background */
+  --nav-dropdown-color: #a8a9b4; /* Dropdown text color */
+  --nav-dropdown-hover-color: #ffffff; /* Dropdown hover color */
 }
 
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
-
+/* Light mode-specific overrides */
 .light-background {
   --background-color: #f4fafd;
   --surface-color: #ffffff;
 }
 
+/* Dark mode-specific overrides */
 .dark-background {
   --background-color: #040b14;
   --default-color: #ffffff;
@@ -52,14 +70,7 @@
   --contrast-color: #ffffff;
 }
 
-/* Smooth scroll */
-:root {
-  scroll-behavior: smooth;
-}
-
-/*--------------------------------------------------------------
-# General Styling & Shared Classes
---------------------------------------------------------------*/
+/* General Styling & Shared Classes */
 body {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -77,18 +88,12 @@ a:hover {
   text-decoration: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   color: var(--heading-color);
   font-family: var(--heading-font);
 }
 
-/* PHP Email Form Messages
-------------------------------*/
+/* PHP Email Form Messages */
 .php-email-form .error-message {
   display: none;
   background: #df1529;
@@ -98,6 +103,23 @@ h6 {
   margin-bottom: 24px;
   font-weight: 600;
 }
+
+/* Button Styling for Dark/Light mode */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 25%);
+}
+
 
 .php-email-form .sent-message {
   display: none;
